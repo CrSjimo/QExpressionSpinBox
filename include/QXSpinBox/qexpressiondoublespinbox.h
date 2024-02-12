@@ -36,6 +36,13 @@ namespace QXSpinBox {
         explicit QExpressionDoubleSpinBox(QWidget *parent = nullptr);
         ~QExpressionDoubleSpinBox();
 
+        QString cleanText() const = delete;
+
+        QString prefix() const = delete;
+        void setPrefix(const QString &) = delete;
+        QString suffix() const = delete;
+        void setSuffix(const QString &) = delete;
+
         QValidator::State validate(QString &input, int &pos) const override;
         void fixup(QString &str) const override;
     };

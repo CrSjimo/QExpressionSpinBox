@@ -37,6 +37,7 @@ int main (int argc, char **argv) {
     auto layout = new QVBoxLayout;
     auto spinBox = new QExpressionSpinBox;
     auto doubleSpinBox = new QExpressionDoubleSpinBox;
+    doubleSpinBox->setSuffix("suffix");
     layout->addWidget(spinBox);
     layout->addWidget(doubleSpinBox);
     dlg.setLayout(layout);

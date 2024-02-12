@@ -24,6 +24,8 @@
 
 #include "QXSpinBox/qexpressiondoublespinbox.h"
 
+#include <QDebug>
+
 #include "tinyexpr.h"
 
 namespace QXSpinBox {
@@ -43,6 +45,7 @@ namespace QXSpinBox {
     void QExpressionDoubleSpinBox::fixup(QString &str) const {
         int err;
         auto s = str;
+        qDebug() << s;
         for (auto &c : s) {
             if (c.unicode() >= 0xff01 && c.unicode() <= 0xff5e) {
                 c.unicode() -= 0xfee0;

@@ -37,8 +37,15 @@ namespace QXSpinBox {
         explicit QExpressionSpinBox(QWidget *parent = nullptr);
         ~QExpressionSpinBox() override;
 
+        QString cleanText() const = delete;
+
         int displayIntegerBase() const = delete;
         void setDisplayIntegerBase(int) = delete;
+
+        QString prefix() const = delete;
+        void setPrefix(const QString &) = delete;
+        QString suffix() const = delete;
+        void setSuffix(const QString &) = delete;
 
     protected:
         QValidator::State validate(QString &input, int &pos) const override;
